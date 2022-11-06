@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
     <header>
@@ -12,12 +13,13 @@
     </header>
     <main>
         <section id="location">
-            <h2 class="weather-temp">16° <span class="weather-measurement">C</span></h2>
+            <h2 class="section-title weather-temp">16° <span class="weather-measurement">C</span></h2>
             <p class="full-location">London, UK</p>
             <p class="date">05/11/2022</p>
             <p class="weather-description">Rain <span class="weather-icon">ICON</span></p>
         </section>
         <section id="detail-week">
+            <h2 class="section-title forecast-detail">Forecast for the next days</h2>
             <article class="detail-card">
                 <h3 class="card-day">06/11</h3>
                 <p class="card-description">Rain <span class="card-icon">ICON</span></p>
@@ -47,14 +49,15 @@
                     <input type="text" name="query" id="location" placeholder="Weather in your city">
                     <button type="submit" style="display:none;"></button>
                 </label>
-            </form>            
+            </form> 
+            <article class="previous">
+                <h3 class="recent-locations">Most recent locations</h3>
+                <p class="most-recent">Dubai</p>
+                <p class="most-recent">Miami</p>
+                <p class="most-recent">Tokyo</p>
+            </article>           
         </section>
-        <section id="details">
-            
-        </section>
-        <section id="spotify">
-            
-        </section>    
+           
     </aside>        
     <footer>
         <p>&copy;2022 Tiago Costa Rebelo</p>
