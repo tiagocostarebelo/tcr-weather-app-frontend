@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+</head>
+<body>
+    <header>
+        <p>WEATHER<span>app</span></p>
+    </header>
+    <main>
+        <section id="location">
+            <h2 class="weather-temp">16° <span class="weather-measurement">C</span></h2>
+            <p class="full-location">London, UK</p>
+            <p class="date">05/11/2022</p>
+            <p class="weather-description">Rain <span class="weather-icon">ICON</span></p>
+        </section>
+        <section id="detail-week">
+            <article class="detail-card">
+                <h3 class="card-day">06/11</h3>
+                <p class="card-description">Rain <span class="card-icon">ICON</span></p>
+            </article>
+            <article class="detail-card">
+                <h3 class="card-day">06/11</h3>
+                <p class="card-description">Rain <span class="card-icon">ICON</span></p>
+            </article>
+            <article class="detail-card">
+                <h3 class="card-day">06/11</h3>
+                <p class="card-description">Rain <span class="card-icon">ICON</span></p>
+            </article>
+            <article class="detail-card">
+                <h3 class="card-day">06/11</h3>
+                <p class="card-description">Rain <span class="card-icon">ICON</span></p>
+            </article>
+            <article class="detail-card">
+                <h3 class="card-day">06/11</h3>
+                <p class="card-description">Rain <span class="card-icon">ICON</span></p>
+            </article>
+        </section>
+    </main>
+    <aside>
+        <section id="search-and-previous">            
+            <form role="search" action="/find" method="get">
+                <label for="location">
+                    <input type="text" name="query" id="location" placeholder="Weather in your city">
+                    <button type="submit" style="display:none;"></button>
+                </label>
+            </form>            
+        </section>
+        <section id="details">
+            
+        </section>
+        <section id="spotify">
+            
+        </section>    
+    </aside>        
+    <footer>
+        <p>&copy;2022 Tiago Costa Rebelo</p>
+    </footer>
+    <script src="./js/index.js"></script>
+</body>
+</html>
