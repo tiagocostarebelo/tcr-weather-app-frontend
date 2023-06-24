@@ -5,62 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/resets.css">
+    <link rel="stylesheet" href="./css/styles.css">    
 </head>
 <body>
     <header>
-        <p>WEATHER<span>app</span></p>
+        <p class="logo">Weather<span>app</span></p>
+        <p class="date">24th June 2023</p>
     </header>
     <main>
-        <section id="location">
-            <h2 class="section-title weather-temp">16° <span class="weather-measurement">C</span></h2>
-            <p class="full-location">London, UK</p>
-            <p class="date">05/11/2022</p>
-            <p class="weather-description">Rain <span class="weather-icon">ICON</span></p>
+        <section id="search">
+            <form action="">
+                <label for="location">Enter location</label>
+                <input type="text" id="location" name="location" placeholder="Enter the location here" required>
+                <button type="submit" class="btn submit-btn"></button>
+            </form>
+        </section> 
+        <section id="display-search">
+            
         </section>
-        <section id="detail-week">
-            <h2 class="section-title forecast-detail">Forecast for the next days</h2>
-            <article class="detail-card">
-                <h3 class="card-day">06/11</h3>
-                <p class="card-description">Rain <span class="card-icon">ICON</span></p>
-            </article>
-            <article class="detail-card">
-                <h3 class="card-day">06/11</h3>
-                <p class="card-description">Rain <span class="card-icon">ICON</span></p>
-            </article>
-            <article class="detail-card">
-                <h3 class="card-day">06/11</h3>
-                <p class="card-description">Rain <span class="card-icon">ICON</span></p>
-            </article>
-            <article class="detail-card">
-                <h3 class="card-day">06/11</h3>
-                <p class="card-description">Rain <span class="card-icon">ICON</span></p>
-            </article>
-            <article class="detail-card">
-                <h3 class="card-day">06/11</h3>
-                <p class="card-description">Rain <span class="card-icon">ICON</span></p>
-            </article>
-        </section>
-    </main>
-    <aside>
-        <section id="search-and-previous">            
-            <form role="search" action="/find" method="get">
-                <label for="location">
-                    <input type="text" name="query" id="location" placeholder="Weather in your city">
-                    <button type="submit" style="display:none;"></button>
-                </label>
-            </form> 
-            <article class="previous">
-                <h3 class="recent-locations">Most recent locations</h3>
-                <p class="most-recent">Dubai</p>
-                <p class="most-recent">Miami</p>
-                <p class="most-recent">Tokyo</p>
-            </article>           
-        </section>
-           
-    </aside>        
+        <section id="recent-search"></section>
+    </main>      
     <footer>
-        <p>&copy;2022 Tiago Costa Rebelo</p>
+        <p>&copy;2023. Designed and Coded by <a href="" class="href">Tiago Costa Rebelo</a></p>
     </footer>
     <script src="./js/index.js"></script>
 </body>
