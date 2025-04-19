@@ -89,6 +89,10 @@ select {
 
 /*** GLOBAL CLASSES ***/
 
+:root {
+    --background-image: url('https://images.unsplash.com/photo-1590339361030-63189cfdc8ef?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -98,4 +102,213 @@ select {
     padding: 0;
     clip: rect(0 0 0 0);
     overflow: hidden;
+}
+
+
+body {
+    background: var(--background-image);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+
+    min-height: 100vh;
+    display: grid;
+    align-items: center;
+
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+main {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1400px;
+    height: auto;
+
+    box-shadow: rgba(0, 0, 0, 0.45) 1px 4px 10px 1px;
+}
+
+.location-widget {
+    background: var(--background-image);
+    background-position: 50% 70%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.background-opacity__layer {
+    background: #000000;
+    background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(250, 250, 250, 0) 100%);
+    background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(250, 250, 250, 0) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(250, 250, 250, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#FAFAFA", GradientType=0);
+}
+
+.location-widget__search {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 3rem 4rem;
+}
+
+#city-input {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 2.5rem;
+    width: 50%;
+}
+
+#city-input::placeholder {
+    color: rgb(190, 190, 190);
+    font-weight: 500;
+}
+
+#city-input:focus {
+    color: white;
+    font-weight: 300;
+}
+
+#city-input:active {
+    color: white;
+    font-weight: 300;
+}
+
+.location-widget__info {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.fa-location-dot {
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.location-widget__city {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.location-widget__date,
+.location-widget__time {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.location-widget__weather {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 4rem 3rem 4rem;
+    color: white;
+
+    margin-bottom: 1rem;
+}
+
+[class*="detail-item"] {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+[class*="detail-item"] dt {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    font-weight: 600;
+}
+
+[class*="detail-item"] dd {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 300;
+}
+
+.weather-widget {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    column-gap: 4rem;
+    padding: 3rem 4rem;
+    color: white;
+}
+
+.weather-widget__current {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+    text-align: center;
+    gap: 6rem;
+}
+
+.weather-widget__temperature .weather-widget__value {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+.weather-widget__date {
+    font-size: 1rem;
+    font-weight: 500;
+    text-wrap: nowrap;
+    padding: 4px 15px;
+    border-radius: 15px;
+    background-color: darkgray;
+}
+
+.weather-widget__condition .fa-cloud-sun {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.weather-widget__condition .weather-widget__label {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.weather-widget__forecast {
+    width: 100%;
+    height: 100%;
+}
+
+.weather-widget__forecast-list {
+    display: flex;
+}
+
+[class*='forecast-item']:first-of-type {
+    border-left: 1px solid black;
+}
+
+[class*='forecast-item'] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    row-gap: 2rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+    border-right: 1px solid black;
+    width: 100%;
+}
+
+[class*='forecast-item'] time {
+    font-size: 1rem;
+    font-weight: 500;
+    text-wrap: nowrap;
+    padding: 4px 15px;
+    border-radius: 15px;
+    color: white;
+    background-color: darkgray;
+}
+
+[class*='forecast-item'] .weather-widget__value {
+    font-size: 1.25rem;
+    font-weight: 500;
 }
