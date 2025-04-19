@@ -10,6 +10,20 @@
 
 <body>
     <main>
+        <!-- Search Widget -->
+        <section class="search-widget" aria-labelledby="search-heading">
+            <h2 id="search-heading" class="visually-hidden">Search for a city's weather</h2>
+            <form action="#" method="get" class="search-widget__form" role="search">
+                <label for="city-input" class="visually-hidden">Enter a city name</label>
+                <input type="text" id="city-input" name="city" placeholder="Enter city name..." aria-label="City name"
+                    required class="search-widget__input" />
+                <button type="submit" class="search-widget__button" aria-label="Search">
+                    <img src="icons/search.svg" alt="" />
+                    <span class="visually-hidden">Search</span>
+                </button>
+            </form>
+        </section>
+
         <!-- Weather Widget -->
         <section class="weather-widget" aria-labelledby="weather-heading">
             <!-- Visually hidden heading for screen readers -->
