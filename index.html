@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <main>
+        <!-- Weather Widget -->
+        <section class="weather-widget" aria-labelledby="weather-heading">
+            <!-- Visually hidden heading for screen readers -->
+            <h1 id="weather-heading" class="visually-hidden">Current Weather and Hourly Forecast</h1>
+
+            <!-- Current Weather Section -->
+            <div class="weather-widget__current">
+                <div class="weather-widget__temperature">
+                    <span class="weather-widget__value" aria-label="Temperature: 36 degrees Fahrenheit">36°</span>
+                    <time class="weather-widget__date" datetime="2025-12-01">Sunday, December 1</time>
+                </div>
+                <div class="weather-widget__condition">
+                    <img src="icons/cloudy.svg" alt="Cloudy" class="weather-widget__icon" />
+                    <span class="weather-widget__label">Cloudy</span>
+                </div>
+            </div>
+
+            <!-- Hourly Forecast -->
+            <section class="weather-widget__forecast" aria-labelledby="forecast-heading">
+                <h2 id="forecast-heading" class="visually-hidden">Hourly Forecast</h2>
+                <ul class="weather-widget__forecast-list">
+                    <li class="weather-widget__forecast-item">
+                        <time datetime="2025-12-01T04:00">4 AM</time>
+                        <img src="icons/cloudy.svg" alt="Cloudy" class="weather-widget__icon" />
+                        <span class="weather-widget__value">37°</span>
+                    </li>
+                    <li class="weather-widget__forecast-item">
+                        <time datetime="2025-12-01T05:00">5 AM</time>
+                        <img src="icons/cloudy.svg" alt="Cloudy" class="weather-widget__icon" />
+                        <span class="weather-widget__value">36°</span>
+                    </li>
+                    <li class="weather-widget__forecast-item">
+                        <time datetime="2025-12-01T06:00">6 AM</time>
+                        <img src="icons/rain.svg" alt="Rain showers" class="weather-widget__icon" />
+                        <span class="weather-widget__value">36°</span>
+                    </li>
+                    <li class="weather-widget__forecast-item">
+                        <time datetime="2025-12-01T06:58">6:58 AM</time>
+                        <img src="icons/sunrise.svg" alt="Sunrise" class="weather-widget__icon" />
+                        <span class="weather-widget__value">Sunrise</span>
+                    </li>
+                    <li class="weather-widget__forecast-item">
+                        <time datetime="2025-12-01T07:00">7 AM</time>
+                        <img src="icons/partly-cloudy.svg" alt="Partly Cloudy" class="weather-widget__icon" />
+                        <span class="weather-widget__value">36°</span>
+                    </li>
+                </ul>
+            </section>
+        </section>
+        <!-- Location & Details Widget -->
+        <section class="location-widget" aria-labelledby="location-heading">
+            <h2 id="location-heading" class="visually-hidden">Location and Weather Details</h2>
+
+            <div class="location-widget__info">
+                <img src="icons/location.svg" alt="Location pin icon" class="location-widget__icon">
+                <h3 class="location-widget__city">Brooklyn, NY</h3>
+            </div>
+
+            <section class="location-widget__weather" aria-labelledby="details-heading">
+                <h3 id="details-heading" class="visually-hidden">Weather Details</h3>
+                <dl class="location-widget__weather-details">
+                    <div class="location-widget__detail-item">
+                        <dt>Humidity</dt>
+                        <dd>67%</dd>
+                    </div>
+                    <div class="location-widget__detail-item">
+                        <dt>Chance of Rain</dt>
+                        <dd>11%</dd>
+                    </div>
+                    <div class="location-widget__detail-item">
+                        <dt>Wind</dt>
+                        <dd>0 mph</dd>
+                    </div>
+                    <div class="location-widget__detail-item">
+                        <dt>Feels Like</dt>
+                        <dd>36°</dd>
+                    </div>
+                </dl>
+            </section>
+        </section>
+    </main>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
