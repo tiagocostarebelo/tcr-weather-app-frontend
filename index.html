@@ -25,15 +25,15 @@
                 <section class="location-widget__search" aria-labelledby="search-heading">
                     <h2 id="search-heading" class="visually-hidden">Search for a city's weather</h2>
                     <form action="#" method="get" class="search-widget__form" role="search">
-                        <label for="city-input" class="visually-hidden">Enter a city name</label>
-                        <input type="text" id="city-input" name="city" placeholder="Brooklyn" required
-                            class="search-widget__input" />
+                        <label for="location-input" class="visually-hidden">Enter a city name</label>
+                        <input type="text" id="location-input" name="city" placeholder="Enter a city here"
+                            class="search-widget__input" required />
                     </form>
 
                     <div class="location-widget__info">
                         <i class="fa-solid fa-location-dot"></i>
                         <h3 class="location-widget__city">Brooklyn, NY</h3>
-                        <time class="location-widget__date" datetime="2025-12-01">Sunday, December 1</time>
+                        <time class="location-widget__date" datetime="2025-12-01">Monday, December 1st</time>
                         <time class="location-widget__time" datetime="20:00">20:00</time>
                     </div>
                 </section>
@@ -73,7 +73,7 @@
             <div class="weather-widget__current">
                 <div class="weather-widget__temperature">
                     <p class="weather-widget__value">36°</p>
-                    <time class="weather-widget__date" datetime="2025-12-01">Sunday, 1st</time>
+                    <time class="weather-widget__date" datetime="2025-12-01">Monday, 1st</time>
                 </div>
                 <div class="weather-widget__condition">
                     <i class="fa-solid fa-cloud-sun"></i>
@@ -81,35 +81,36 @@
                 </div>
             </div>
 
-            <!-- Hourly Forecast -->
+            <!-- Daily Forecast -->
             <section class="weather-widget__forecast" aria-labelledby="forecast-heading">
                 <h2 id="forecast-heading" class="visually-hidden">Hourly Forecast</h2>
                 <ul class="weather-widget__forecast-list">
                     <li class="weather-widget__forecast-item">
-                        <time datetime="2025-12-01T04:00">Monday</time>
+                        <time datetime="2025-12-02T04:00">Tue</time>
                         <i class="fa-solid fa-cloud-sun"></i>
                         <span class="weather-widget__value">37°</span>
                     </li>
                     <li class="weather-widget__forecast-item">
-                        <time datetime="2025-12-01T05:00">Tuesday</time>
+                        <time datetime="2025-12-03T05:00">Wed</time>
                         <i class="fa-solid fa-cloud-sun"></i>
                         <span class="weather-widget__value">36°</span>
                     </li>
                     <li class="weather-widget__forecast-item">
-                        <time datetime="2025-12-01T06:00">Wednesday</time>
+                        <time datetime="2025-12-04T06:00">Thur</time>
                         <i class="fa-solid fa-cloud-rain"></i>
                         <span class="weather-widget__value">36°</span>
                     </li>
                     <li class="weather-widget__forecast-item">
-                        <time datetime="2025-12-01T06:58">Thursday</time>
+                        <time datetime="2025-12-05T06:58">Fri</time>
                         <i class="fa-solid fa-sun"></i>
                         <span class="weather-widget__value">Sunrise</span>
                     </li>
                     <li class="weather-widget__forecast-item">
-                        <time datetime="2025-12-01T07:00">Friday</time>
+                        <time datetime="2025-12-06T07:00">Sat</time>
                         <i class="fa-solid fa-cloud-sun"></i>
                         <span class="weather-widget__value">36°</span>
                     </li>
+
                 </ul>
             </section>
         </section>
