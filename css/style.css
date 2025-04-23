@@ -127,7 +127,7 @@ body {
 main {
     margin: 0 auto;
     width: 100%;
-    max-width: 90%;
+    max-width: 80%;
     height: auto;
 
     box-shadow: rgba(0, 0, 0, 0.45) 1px 4px 10px 1px;
@@ -152,7 +152,29 @@ main {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 3rem 4rem;
+    padding: 3rem 4rem 6rem 4rem;
+}
+
+.search-widget__form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.fa-magnifying-glass {
+    font-size: 2rem;
+    color: white;
+    margin-right: 1rem;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px #23232329;
 }
 
 #location-input {
@@ -160,6 +182,7 @@ main {
     border: none;
     background-color: transparent;
     font-size: 2.5rem;
+    color: white;
 }
 
 #location-input::placeholder {
@@ -167,11 +190,8 @@ main {
     font-weight: 500;
 }
 
-#location-input:focus {
-    color: white;
-    font-weight: 300;
-}
-
+#location-input:focus,
+#location-input:focus-visible,
 #location-input:active {
     color: white;
     font-weight: 300;
@@ -194,8 +214,7 @@ main {
     font-weight: 600;
 }
 
-.location-widget__date,
-.location-widget__time {
+.location-widget__date {
     font-size: 1.25rem;
     font-weight: 300;
     margin-top: 10px;
@@ -234,20 +253,20 @@ main {
     align-items: center;
     justify-content: space-between;
     column-gap: 4rem;
-    padding: 3rem 4rem;
+    padding: 6rem 4rem 3rem 4rem;
     color: white;
 }
 
 .weather-widget__current {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-around;
     text-align: center;
     gap: 4rem;
 }
 
 .weather-widget__temperature .weather-widget__value {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
     margin-bottom: 3rem;
 }
@@ -261,44 +280,19 @@ main {
     background-color: darkgray;
 }
 
-.weather-widget__condition .fa-cloud-sun {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
+.weather-widget__condition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-widget__icon {
+    width: 70px;
 }
 
 .weather-widget__condition .weather-widget__label {
     font-size: 2rem;
-    font-weight: 300;
-}
-
-.weather-widget__forecast {
-    width: 100%;
-    height: 100%;
-}
-
-.weather-widget__forecast-list {
-    /* border: 2px solid red; */
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-.weather-widget__forecast-list li {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 1.5rem;
-    border-right: 1px solid black;
-}
-
-.weather-widget__forecast-list li:first-of-type {
-    border-left: 1px solid black;
-}
-
-.weather-widget__forecast-list li time {
-    font-weight: 600;
+    font-weight: 700;
 }
 
 
@@ -337,8 +331,7 @@ main {
         font-size: 1.25rem;
     }
 
-    .location-widget__date,
-    .location-widget__time {
+    .location-widget__date {
         font-size: 1rem;
         margin-top: 5px;
     }
@@ -373,8 +366,23 @@ main {
 }
 
 @media screen and (max-width: 670px) {
+
+    .location-widget__search,
+    .weather-widget {
+        padding: 3rem 1rem;
+    }
+
     .location-widget__search {
         flex-direction: column-reverse;
+    }
+
+    .search-widget__form {
+        margin-top: 2rem;
+    }
+
+    .fa-magnifying-glass {
+        font-size: 1.25rem;
+        margin-right: 0.25rem;
     }
 
     .location-widget__info {
@@ -385,18 +393,14 @@ main {
         font-size: 1.25rem;
     }
 
-    #location-input {
-        margin-top: 2rem;
-        font-size: 1.5rem;
-    }
-
     [class*="detail-item"] {
         line-height: 1.75rem;
     }
 
     .weather-widget {
         flex-direction: column;
-        row-gap: 2.5rem;
+        align-items: flex-start;
+        row-gap: 3rem;
     }
 
     .weather-widget__temperature .weather-widget__value {
@@ -404,17 +408,13 @@ main {
         margin-bottom: 1.5rem;
     }
 
-    .weather-widget__condition .fa-cloud-sun {
-        font-size: 2.15rem;
-        margin-bottom: 1rem;
+    .weather-widget__current {
+        display: flex;
+        gap: 2rem;
     }
 
     .weather-widget__condition .weather-widget__label {
         font-size: 1rem;
         font-weight: 300;
-    }
-
-    .weather-widget__forecast-list li {
-        font-size: 0.8rem;
     }
 }
