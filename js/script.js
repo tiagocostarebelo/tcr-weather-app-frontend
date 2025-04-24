@@ -30,7 +30,7 @@ function dateFormatter() {
     const smallFormattedDate = new Intl.DateTimeFormat('en-GB', smallOpts).format(date);
     dateEl.innerText = formattedDate;
     smallDateEl.innerText = smallFormattedDate;
-}
+};
 
 function getCurrentLocation() {
     if ("geolocation" in navigator) {
@@ -43,7 +43,7 @@ function getCurrentLocation() {
                 }
             };
             console.log(currLocation);
-            fetchWeatherData(currLocation);
+            fetchData(currLocation);
         }, (error) => {
             console.error('Geolocation error:', error.message);
             setRandomCity();
@@ -51,7 +51,7 @@ function getCurrentLocation() {
     } else {
         setRandomCity();
     }
-}
+};
 
 function setRandomCity() {
     const cities = [
@@ -78,11 +78,11 @@ function setRandomCity() {
     ];
 
     const randomIndex = Math.floor(Math.random() * cities.length);
-    fetchWeatherData(currLocation = {
+    fetchData(currLocation = {
         type: 'city',
         value: cities[randomIndex]
     });
-}
+};
 
 function enterInput(e) {
     if (e.key === 'Enter') {
@@ -94,33 +94,38 @@ function enterInput(e) {
                 value: city
             };
             console.log(inputLocation);
-            fetchWeatherData(inputLocation);
+            fetchData(inputLocation);
         } else {
             alert("Please enter a city")
         }
     }
 };
 
-function updateUI(data) {
-    let cityEl = document.querySelector('.location-widget__city');
-    let tempEl = document.querySelector('.weather-widget__value');
-    let iconEl = document.querySelector('.weather-widget__icon');
-    let descriptionEl = document.querySelector('.weather-widget__label');
-    let humidityEl = document.querySelector('.detail-item__humidity');
-    let windEl = document.querySelector('.detail-item__wind');
-    let feelsLikeEl = document.querySelector('.detail-item__feels');
+function updateUI({ weather, image }) {
+    const rootEl = document.documentElement;
+    const cityEl = document.querySelector('.location-widget__city');
+    const tempEl = document.querySelector('.weather-widget__value');
+    const iconEl = document.querySelector('.weather-widget__icon');
+    const descriptionEl = document.querySelector('.weather-widget__label');
+    const humidityEl = document.querySelector('.detail-item__humidity');
+    const windEl = document.querySelector('.detail-item__wind');
+    const feelsLikeEl = document.querySelector('.detail-item__feels');
+    const photoAuthor = document.querySelector('.unsplash-author');
 
 
-    cityEl.innerText = `${data.city}, ${data.country}`;
-    tempEl.innerText = `${data.temperature.toFixed(1)}°`;
-    iconEl.setAttribute('src', `https://openweathermap.org/img/wn/${data.icon}@2x.png`);
-    descriptionEl.innerText = `${data.main}`;
-    humidityEl.innerText = `${data.humidity}%`;
-    windEl.innerText = `${data.windSpeed} mph`;
-    feelsLikeEl.innerText = `${data.feelsLike.toFixed(1)}°`;
+    rootEl.style.setProperty('--background-image', `url(${image.unsplashImageUrl})`)
+    cityEl.innerText = `${weather.city}, ${weather.country}`;
+    tempEl.innerText = `${weather.temperature.toFixed(1)}°`;
+    iconEl.setAttribute('src', `https://openweathermap.org/img/wn/${weather.icon}@2x.png`);
+    descriptionEl.innerText = `${weather.main}`;
+    humidityEl.innerText = `${weather.humidity}%`;
+    windEl.innerText = `${weather.windSpeed} mph`;
+    feelsLikeEl.innerText = `${weather.feelsLike.toFixed(1)}°`;
+    photoAuthor.innerText = `${image.name}`;
+    photoAuthor.setAttribute('href', `${image.unsplash_link}`);
 }
 
-async function fetchWeatherData(location) {
+async function fetchData(location) {
     try {
         const res = await fetch('/api/weather', {
             method: 'POST',
@@ -131,7 +136,7 @@ async function fetchWeatherData(location) {
         if (!res.ok) throw new Error('Network response was not ok');
 
         const data = await res.json();
-        console.log(data);
+        // console.log(data);
         updateUI(data); // Update your HTML elements
     } catch (err) {
         console.error('Error fetching weather data:', err);
