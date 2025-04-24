@@ -129,7 +129,8 @@ function updateUI({ weather, image }) {
 
 async function fetchData(location) {
     try {
-        const res = await fetch('/api/weather', {
+        const backendDeployedUrl = 'https://weather-hub-sbb5.onrender.com/';
+        const res = await fetch(`${backendDeployedUrl}/api/weather`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(location)
