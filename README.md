@@ -21,7 +21,7 @@ This directory contains the frontend code for the Weather App MVP. It provides a
 
 ## Prerequisites
 *   A modern web browser (e.g., Chrome, Firefox, Safari, Edge).
-*   The [Weather App Backend](<link_to_backend_repo_or_directory_if_monorepo>) must be running, as this frontend relies on its API.
+*   The [Weather App Backend](https://github.com/tiagocostarebelo/tcr-weather-app-backend) must be running, as this frontend relies on its API.
 
 ## Setup and Running
 This frontend is composed of static files (HTML, CSS, JS) that are typically served directly by the Weather App Backend service.
