@@ -10,7 +10,7 @@ let inputLocation = {
 };
 
 function dateFormatter() {
-    const date = new Date('2025-04-23');
+    const date = new Date();
     const dateEl = document.querySelector('.location-widget__date');
     const smallDateEl = document.querySelector('.weather-widget__date');
 
@@ -96,8 +96,10 @@ function enterInput(e) {
             console.log(inputLocation);
             fetchData(inputLocation);
         } else {
-            alert("Please enter a city")
+            console.error('Please enter a city');
         }
+
+        input.value = '';
     }
 };
 
