@@ -1,7 +1,7 @@
 # Weather App - Frontend (MVP)
 
 ## Overview
-This directory contains the frontend code for the Weather App MVP. It provides a user interface built with HTML, CSS, and vanilla JavaScript to display weather information fetched from the corresponding backend service. Users can view weather details for their current location (via browser geolocation) or search for weather in specific cities. The application features a dynamic background image related to the displayed location, sourced via the backend from Unsplash.
+This directory contains the frontend code for the MVP version of this Weather App. It provides a user interface built with HTML, CSS, and vanilla JavaScript to display weather information fetched from the corresponding backend service. Users can view weather details for their current location (via browser geolocation - user needs to allow it) or search for weather in specific cities. The application features a dynamic background image related to the displayed location, sourced via the backend from Unsplash.
 
 ## Features (MVP)
 *   **Geolocation:** Attempts to fetch weather for the user's current location on initial load.
